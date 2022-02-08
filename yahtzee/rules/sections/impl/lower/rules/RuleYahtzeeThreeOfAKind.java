@@ -1,11 +1,12 @@
-package yahtzee.rules.impl;
+package yahtzee.rules.sections.impl.lower.rules;
 import yahtzee.YahtzeeHand;
-import yahtzee.rules.*;
+import yahtzee.rules.sections.SectionedYahtzeeScoreRule;
+import yahtzee.rules.sections.impl.lower.YahtzeeSectionLower;
 
-public class RuleYahtzeeThreeOfAKind extends YahtzeeScoreRule {
+public class RuleYahtzeeThreeOfAKind extends SectionedYahtzeeScoreRule {
 
   public RuleYahtzeeThreeOfAKind() {
-    super("three_of_a_kind", "Three of a kind!");
+    super("three_of_a_kind", "Three of a kind!", 1, YahtzeeSectionLower.class);
   }
 
 

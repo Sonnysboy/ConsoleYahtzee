@@ -32,9 +32,7 @@ public abstract class YahtzeeScoreRule implements IYahtzeeScoreRule {
     this(internalID, displayText, 0);
   }
   public YahtzeeScoreRule(String internalID, String displayText, int priority) {
-    this(internalID, displayText, priority, null);
-    
-
+    this(internalID, displayText, priority, (Class<? extends YahtzeeScoreRule>) null);
   }
 
   public YahtzeeScoreRule(String internalID, String displayText, int priority, Class<? extends YahtzeeScoreRule>... conflictions) {
@@ -68,5 +66,10 @@ public abstract class YahtzeeScoreRule implements IYahtzeeScoreRule {
   }
   public Class<? extends YahtzeeScoreRule>[] getConflictions() {
     return conflictions.get();
+  }
+
+
+  public static Comparator<YahtzeeScoreRule> getOrdering() {
+    return Comparator.<YahtzeeScoreRule>comparingInt(e -> e.priority);
   }
 }

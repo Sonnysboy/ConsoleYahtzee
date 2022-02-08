@@ -31,4 +31,12 @@ public class RolledYahtzeeDice implements Comparable<RolledYahtzeeDice> {
     return getRoll() - other.getRoll();
 
   }
+
+
+  @Override
+  public String toString() {
+    return String.format(
+      "RolledYahtzeeDice@%d{value=%d}", this.hashCode(), getRoll()
+    );
+  }
 }
